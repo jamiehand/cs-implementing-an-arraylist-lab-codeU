@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.flatironschool.javacs;
 
@@ -35,7 +35,7 @@ public class MyArrayListTest {
 		list.add(1);
 		list.add(2);
 		list.add(3);
-		
+
 		mal = new MyArrayList<Integer>();
 		mal.addAll(list);
 	}
@@ -69,7 +69,7 @@ public class MyArrayListTest {
 		//System.out.println(Arrays.toString(mal.toArray()));
 		assertThat(mal.get(1), is(new Integer(5)));
 		assertThat(mal.size(), is(4));
-		
+
 		try {
 		    mal.set(-1, 0);
 		    fail();
@@ -79,7 +79,7 @@ public class MyArrayListTest {
 		    mal.set(4, 0);
 		    fail();
 		} catch (IndexOutOfBoundsException e) {} // good
-		
+
 		mal.add(0, 6);
 		//System.out.println(Arrays.toString(mal.toArray()));
 		assertThat(mal.get(0), is(6));
@@ -196,13 +196,13 @@ public class MyArrayListTest {
 		assertThat(mal.size(), is(1));
 		assertThat(mal.get(0), is(new Integer(3)));
 		//System.out.println(Arrays.toString(mal.toArray()));
-		
+
 		flag = mal.remove(new Integer(5));
 		assertThat(flag, equalTo(false));
 		assertThat(mal.size(), is(1));
 		assertThat(mal.get(0), is(new Integer(3)));
 		//System.out.println(Arrays.toString(mal.toArray()));
-		
+
 		flag = mal.remove(new Integer(3));
 		assertThat(flag, equalTo(true));
 		assertThat(mal.size(), is(0));
@@ -252,7 +252,7 @@ public class MyArrayListTest {
 
 		try {
 		    mal.set(-1, 0);
-		    fail();
+		    fail();  /* fails if no IndexOutOfBoundsException thrown */
 		} catch (IndexOutOfBoundsException e) {} // good
 
 		try {
